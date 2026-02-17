@@ -1,0 +1,44 @@
+# Rust
+/target/
+Cargo.lock
+crates/*/target/
+**/*.rs.bk
+
+# Node / npm
+node_modules/
+client-desktop/dist/
+client-desktop/npm-debug.log*
+client-desktop/.env.local
+client-desktop/.env.*.local
+
+# Tauri
+client-desktop/src-tauri/target/
+client-desktop/src-tauri/dist/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+config.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/settings.json
+.idea/
+*.iml
+*.sublime-workspace
+
+# CI/CD Local Overrides
+.gitlab-ci.local.yml
+
+# Misc
+*.log
+.tmp/
+.claude/
+.github/

@@ -1,0 +1,53 @@
+services:
+  server_a:
+    build: .
+    environment:
+      SERVER_NAME: a
+      BASE_URL: http://server_a:8080
+      DATABASE_PATH: /data/db.sqlite
+      ADMIN_TOKEN: admin-a
+      SERVER_TOKEN: token-a
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin
+      RUST_LOG: warn
+      TENOR_API_KEY: ${TENOR_API_KEY:-}
+    ports:
+      - "8081:8080"
+    volumes:
+      - server_a_data:/data
+  server_b:
+    build: .
+    environment:
+      SERVER_NAME: b
+      BASE_URL: http://server_b:8080
+      DATABASE_PATH: /data/db.sqlite
+      ADMIN_TOKEN: admin-b
+      SERVER_TOKEN: token-b
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin
+      RUST_LOG: warn
+      TENOR_API_KEY: ${TENOR_API_KEY:-}
+    ports:
+      - "8082:8080"
+    volumes:
+      - server_b_data:/data
+  server_c:
+    build: .
+    environment:
+      SERVER_NAME: c
+      BASE_URL: http://server_c:8080
+      DATABASE_PATH: /data/db.sqlite
+      ADMIN_TOKEN: admin-c
+      SERVER_TOKEN: token-c
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin
+      RUST_LOG: warn
+      TENOR_API_KEY: ${TENOR_API_KEY:-}
+    ports:
+      - "8083:8080"
+    volumes:
+      - server_c_data:/data
+volumes:
+  server_a_data:
+  server_b_data:
+  server_c_data:
